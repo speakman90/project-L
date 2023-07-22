@@ -13,3 +13,42 @@ body {
 h1, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
+
+.marquee-rtl {
+    max-width: 100%;                      /* largeur de la fenêtre */
+    overflow: hidden;         
+}
+
+.marquee-rtl > :first-child {
+    display: inline-block;                /* modèle de boîte en ligne */
+    padding-left: 100%;                   /* placement à gauche du conteneur */
+    white-space: nowrap;                  /* pas de passage à la ligne */
+    animation: defilement-rtl 20s infinite linear;
+  }
+
+@keyframes defilement-rtl {
+0% {
+    transform: translate3d(-100%,0,0);
+}
+100% {
+    transform: translate3d(0%,0,0);
+}
+
+}
+
+.clip-zone {
+    width: 647px;
+    height: 400px;
+    overflow: hidden;
+    -webkit-box-shadow: -10px 20px 0px 9px #FFFFFF; 
+    box-shadow: -10px 20px 0px 9px #FFFFFF;
+}
+
+.clipped {
+    margin: -50% 0px 0px 0px;
+}
+
+.prestation-class {
+    width: 25%;
+    margin-right: 8%;
+}
