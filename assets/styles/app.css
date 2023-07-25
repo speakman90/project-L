@@ -27,13 +27,12 @@ h1, h3, h4, h5, h6 {
   }
 
 @keyframes defilement-rtl {
-0% {
-    transform: translate3d(-100%,0,0);
-}
-100% {
-    transform: translate3d(0%,0,0);
-}
-
+    0% {
+        transform: translate3d(-100%,0,0);
+    }
+    100% {
+        transform: translate3d(0%,0,0);
+    }
 }
 
 .clip-zone {
@@ -59,7 +58,62 @@ h1, h3, h4, h5, h6 {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.overlay {
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    top: 0;
+    background: rgba(77, 77, 77, .9);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.items {
+    padding-left: 20px;
+    letter-spacing: 3px;
     }
+
+.head {
+    font-size: 30px;
+    line-height: 40px;
+    position: relative;
+    top: 8.5rem;
+    transform: translateY(40px);
+    transition: all 0.7s;
+    }
+
+.head > hr {
+    display: block;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px white;
+    position: absolute;
+    bottom: 0; 
+    left:20px;
+    transition: all .5s;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+  }
+
+.container:hover .overlay .head {
+    transform: translateY(0px);
+  }
+  
+.container:hover .overlay hr {
+    width: 75px;
+    transition-delay: 0.4s;
+  }
     
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 1 / 2 / 2 / 3; }
@@ -74,6 +128,32 @@ h1, h3, h4, h5, h6 {
 }
 
 #contact_message {
-    max-height: 10rem;
+    height: 10rem;
+    max-height: 15rem;
     min-height: 5rem;
 }
+
+.list-menu > li {
+    margin: 0 0 5px;
+}
+
+.link-menu {
+    text-decoration: none;
+    position: relative;
+}
+
+.link-menu:after {    
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after { 
+    width: 100%; 
+    left: 0;
+  }
