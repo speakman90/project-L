@@ -43,13 +43,13 @@ h1, h3, h4, h5, h6 {
     box-shadow: -10px 20px 0px 9px #FFFFFF;
 }
 
-.clipped {
-    margin: -50% 0px 0px 0px;
-}
-
 .prestation-class {
     width: 25%;
     margin-right: 8%;
+}
+
+.clipped {
+    margin: -50% 0px 0px 0px;
 }
 
 .parent {
@@ -80,7 +80,7 @@ h1, h3, h4, h5, h6 {
 .items {
     padding-left: 20px;
     letter-spacing: 3px;
-    }
+}
 
 .head {
     font-size: 30px;
@@ -89,7 +89,7 @@ h1, h3, h4, h5, h6 {
     top: 8.5rem;
     transform: translateY(40px);
     transition: all 0.7s;
-    }
+}
 
 .head > hr {
     display: block;
@@ -157,3 +157,44 @@ h1, h3, h4, h5, h6 {
     width: 100%; 
     left: 0;
   }
+
+@media screen and (max-width: 640px) {
+    .clip-zone {
+        width: inherit;
+        height: 400px;
+        overflow: hidden;
+        -webkit-box-shadow: -9px 10px 0px 1px #FFFFFF;
+        box-shadow: -9px 10px 0px 1px #FFFFFF;
+    }
+
+    .prestation-class {
+        width: inherit;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+
+    .projet-img {
+        width: 95%;
+        height: inherit;
+    }
+
+    .overlay {
+        width: 95%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: rgba(77, 77, 77, .9);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    .head {
+        font-size: 10px;
+        line-height: 15px;
+        position: relative;
+        top: 1.2rem;
+        transform: translateY(40px);
+        transition: all 0.7s;
+    }
+
+}
