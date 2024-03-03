@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Lisa Muller - {% block title %}{% endblock %}</title>
         <link rel="icon" href="{{ asset('uploads/logo_lmnoir-simple.svg') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,5 +17,16 @@
     </head>
     <body class="overflow-x-hidden">
         {% block body %}{% endblock %}
+        <footer class="m-[1%]">
+            <article class="flex justify-center">
+                <div class="w-full">
+                    <ul class="flex flex-row justify-around">
+                        <li><a href="{{ path('app_ml')}}"><h5>Mentions légales</h5></a></li>
+                        <li><a href="{{path('app_cgv')}}"><h5>Conditions générales de vente</h5></a></li>
+                        <li><a href="#"><h5>Politique de confidentialité</h5></a></li>
+                    </ul>
+                </div>
+            </article>
+        </footer>
     </body>
 </html>

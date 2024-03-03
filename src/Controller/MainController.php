@@ -49,12 +49,24 @@ class MainController extends AbstractController
         else {
             $this->addFlash(
                 'error',
-                'Votre message à bien était envoyé'
+                "Votre message n'à pas pu être envoyé"
             );
         }
 
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
         ]);
+    }
+
+    #[Route('/conditions-generales-vente', name: 'app_cgv')]
+    public function cgvView(): Response
+    {
+        return $this->render('main/cgv.html.twig');
+    }
+
+    #[Route('/mentions-legales', name: 'app_ml')]
+    public function mlView(): Response
+    {
+        return $this->render('main/ml.html.twig');
     }
 }
