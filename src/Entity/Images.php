@@ -2,12 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ImagesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ImagesRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
+#[Vich\Uploadable]
 class Images
 {
     #[ORM\Id]
@@ -29,6 +32,9 @@ class Images
 
     #[ORM\OneToMany(mappedBy: 'picture', targetEntity: Projets::class)]
     private Collection $projets;
+
+    #[Vich\UploadableField(mapping: "about_images", fileNameProperty: "reference")]
+    private File $file;
 
     public function __construct()
     {
@@ -152,6 +158,18 @@ class Images
                 $projet->setPicture(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFile(): File
+    {
+        return $this->file;
+    }
+
+    public function setFile(File $file): static
+    {
+        $this->file = $file;
 
         return $this;
     }

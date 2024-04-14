@@ -42,9 +42,9 @@ class About
         return $this->picture;
     }
 
-    public function setPicture($picture): static
+    public function setPicture(?Images $picture): self
     {
-        
+
         $this->picture = $picture;
 
         return $this;
