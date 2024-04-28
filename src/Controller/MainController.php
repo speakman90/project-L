@@ -69,4 +69,10 @@ class MainController extends AbstractController
     {
         return $this->render('main/ml.html.twig');
     }
+
+    #[Route('/politique-de-confidentialité', name: 'app_pdc')]
+    public function pdcView(): Response
+    {
+        return $this->render('main/pdc.html.twig');
+    }
 }

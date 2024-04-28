@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Politique de confidentialité {% endblock %}
+
+{% block body %}
+    <nav class="mx-[5%] md:mx-[5%] my-5 flex justify-between items-center">
+        <h1 class="text-6xl underline">Politique de confidentialité</h1>
+        <a href="{{path('app_main')}}" class="link-menu flex">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-1 mb-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+            Retour à l'accueil
+        </a>
+    </nav>
+    <section class="m-[5%] md:mx-[5%] md:my-[2%] border p-5 h-[48rem] overflow-auto">
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Politique de confidentialité</h2>
+            <p>
+                Cette Politique de confidentialité décrit la manière dont LisaVizuals collecte, utilise et protège les informations que vous fournissez lorsque vous utilisez ce site web.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Collecte et utilisation des informations</h2>
+            <p>
+                Nous collectons certaines informations personnelles lorsque vous vous contactez sur notre site, passez une commande, répondez à une enquête, remplissez un formulaire ou communiquez avec nous. Les informations que nous recueillons peuvent inclure votre nom, votre adresse e-mail, votre adresse postale et votre numéro de téléphone.
+                Nous utilisons les informations que vous nous fournissez pour traiter les transactions, améliorer notre service client et personnaliser votre expérience utilisateur. Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers sans votre consentement, sauf si cela est nécessaire pour répondre à une demande que vous avez soumise, comme l'expédition d'une commande.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Protection des informations</h2>
+            <p>
+                Nous mettons en œuvre une variété de mesures de sécurité pour garantir la sécurité de vos informations personnelles lorsque vous passez une commande ou accédez à vos informations personnelles.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Cookies</h2>
+            <p>
+                Nous n'utilisons pas de système de cookie.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Divulgation à des tiers</h2>
+            <p>
+                Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles identifiables à des tiers. Cela n'inclut pas les tiers de confiance qui nous aident à exploiter notre site web ou à mener nos activités, tant que ces parties acceptent de garder ces informations confidentielles.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Consentement</h2>
+            <p>
+                En utilisant notre site, vous consentez à notre politique de confidentialité en ligne.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Mises à jour de la politique de confidentialité</h2>
+            <p>
+                Toute modification apportée à notre politique de confidentialité sera publiée sur cette page.
+            </p>
+        </div>
+
+        <div class="my-5">
+            <h2 class="text-2xl font-semibold">Contactez-nous</h2>
+            <p>
+                Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter à l'adresse suivante : lisavizuals@gmail.com
+            </p>
+        </div>
+    </section>
+
+
+{% endblock %}
