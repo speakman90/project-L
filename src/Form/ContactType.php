@@ -19,20 +19,20 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('prenom', TextType::class, [
-                'label' => 'Votre prénom',
+                'label' => 'Votre prénom*',
                 'label_attr' => ['class' => "block mb-2 text-m font-semibold"],
                 'attr' => ['class' => "shadow-sm bg-gray-50 border border-gray-300 text-m rounded-lg focus:ring-gray-900 focus:ring-gray-900 block w-full p-2.5",
                             'placeholder' => "Votre prénom ici"
                         ],
-                'required' => false
+                'required' => true
             ])
             ->add('nom', TextType::class, [
-                'label' => 'Votre nom',
+                'label' => 'Votre nom*',
                 'label_attr' => ['class' => "block mb-2 text-m font-medium font-semibold"],
                 'attr' => ['class' => "shadow-sm bg-gray-50 border border-gray-300 text-m rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5",
                             'placeholder' => "Votre nom ici"
                     ],
-                'required' => false
+                'required' => true
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Votre email*',

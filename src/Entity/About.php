@@ -26,6 +26,9 @@ class About
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $alt_picture = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -63,6 +66,18 @@ class About
     public function setName(string $name): static
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getAltPicture(): ?string
+    {
+        return $this->alt_picture;
+    }
+
+    public function setAltPicture(?string $alt_picture): static
+    {
+        $this->alt_picture = $alt_picture;
 
         return $this;
     }

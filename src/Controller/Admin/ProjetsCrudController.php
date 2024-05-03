@@ -20,10 +20,12 @@ class ProjetsCrudController extends AbstractCrudController
         return [
             TextField::new('titre'),
             TextField::new('lien'),
+            TextField::new('alt_lien'),
             TextField::new('name')->setFormType(VichImageType::class)
                                   ->onlyOnForms(),
             ImageField::new('name')->setBasePath('/uploads/projets')
-                                   ->setUploadDir('public/uploads/projets')
+                                   ->setUploadDir('public/uploads/projets'),
+            TextField::new('alt_picture'),
         ];
     }
 }
