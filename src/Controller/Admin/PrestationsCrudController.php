@@ -3,10 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Prestations;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class PrestationsCrudController extends AbstractCrudController
@@ -22,7 +22,10 @@ class PrestationsCrudController extends AbstractCrudController
         return [
             TextField::new('titre'),
             TextEditorField::new('description'),
-            ImageField::new('picture')->setUploadDir('public/uploads/prestations/')
+            TextField::new('name')->setFormType(VichImageType::class)
+                                  ->onlyOnForms(),
+            ImageField::new('name')->setBasePath('/uploads/prestations')
+                                   ->setUploadDir('public/uploads/prestations')
         ];
     }
 

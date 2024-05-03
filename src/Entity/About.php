@@ -20,7 +20,7 @@ class About
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[Vich\UploadableField(mapping: 'picture', fileNameProperty: 'name')]
+    #[Vich\UploadableField(mapping: 'about_picture', fileNameProperty: 'name')]
     private ?File $picture = null;
 
     #[ORM\Column(length: 255)]
