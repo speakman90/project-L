@@ -6,7 +6,9 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\Mime\Email;
 use App\Repository\AboutRepository;
+use App\Repository\ProjetsRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\PrestationsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,6 +21,8 @@ class MainController extends AbstractController
     public function index(
         Request $request,
         AboutRepository $aboutRepository,
+        PrestationsRepository $prestationsRepository,
+        ProjetsRepository $projetsRepository,
         EntityManagerInterface $manager,
         MailerInterface $mailer
         ): Response
@@ -58,6 +62,8 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
             'about' => $aboutRepository->findAll(),
+            'prestations' => $prestationsRepository->findBy([], ['id' => 'ASC'], 3),
+            'projets' => $projetsRepository->findBy([], ['id' => 'ASC'], 6),
         ]);
     }
 

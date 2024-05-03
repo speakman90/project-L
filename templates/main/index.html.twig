@@ -91,7 +91,7 @@
                 </div>
                 <div>
                     <p class="text-justify whitespace-pre-line">
-                        {{about[0].description}}
+                        {{about[0].description|striptags }}
                     </p>
                 </div>
             </article>
@@ -109,27 +109,17 @@
         </article>
         <article class="flex justify-center ml-[10%]">
             <div class="flex flex-col md:flex-row">
+            {% for prestation in prestations %}
                 <article class="prestation-class overflow-hidden">
-                    <img src="{{ asset('uploads/chartegraphique.png') }}">
+                    <img src="{{ prestations_images ~ prestation.name }}">
                     <div class="w-full my-[2%] text-justify">
-                        <h5 class="text-xl my-[2%]">Identité visuelle</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida vulputate vestibulum. Praesent volutpat, ante non facilisis pretium, nisi dolor faucibus ante, ac pretium magna arcu non velit. Praesent ac est ut sapien sodales commodo.</p>
+                        <h5 class="text-xl my-[2%]">{{ prestation.titre }}</h5>
+                        <p>
+                            {{ prestation.description|striptags }}
+                        </p>
                     </div>
                 </article>
-                <article class="prestation-class overflow-hidden">
-                    <img src="{{ asset('uploads/logo.png') }}">
-                    <div class="w-full my-[2%] text-justify">
-                        <h5 class="text-xl my-[2%]">Logo</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida vulputate vestibulum. Praesent volutpat, ante non facilisis pretium, nisi dolor faucibus ante, ac pretium magna arcu non velit. Praesent ac est ut sapien sodales commodo.</p>
-                    </div>
-                </article>
-                <article class="prestation-class overflow-hidden">
-                    <img src="{{ asset('uploads/supportscomm.jpg') }}">
-                    <div class="w-full my-[2%] text-justify">
-                        <h5 class="text-xl my-[2%]">Supports de communication</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida vulputate vestibulum. Praesent volutpat, ante non facilisis pretium, nisi dolor faucibus ante, ac pretium magna arcu non velit. Praesent ac est ut sapien sodales commodo.</p>
-                    </div>
-                </article>
+            {% endfor %}
             </div>
         </article>
     </section>
@@ -145,78 +135,20 @@
         </article>
         <article class="mx-[5%] container-projet">
             <div class="parent">
+            {% for projet in projets %}
                 <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/777detailing-identitévisuellecomplete.png')}}" class="projet-img">
+                    <a href="{{ projet.lien }}">
+                        <img src="{{ projet_images ~ projet.name }}" class="projet-img">
                         <div class="overlay">                    
                             <div class="items"></div>
                             <div class="div1 items head">
-                                <p>777 Detailling</p>
+                                <p>{{ projet.titre }}</p>
                                 <hr>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/echoppeautomobile-logoetmaquettesite.png')}}" class="projet-img">
-                        <div class="overlay">                    
-                            <div class="items"></div>
-                            <div class="div1 items head">
-                                <p>L'échoppe automobile</p>
-                                <hr>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/ethodogbyvj - identitévisuelle&site.png')}}" class="projet-img">
-                        <div class="overlay">                    
-                            <div class="items"></div>
-                            <div class="div1 items head">
-                                <p>Etho'Dog By VJ</p>
-                                <hr>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/kodama-identitévisuelle.png')}}" class="projet-img">
-                        <div class="overlay">                    
-                            <div class="items"></div>
-                            <div class="div1 items head">
-                                <p>Kodama</p>
-                                <hr>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/yushikan kendo - affiche.png')}}" class="projet-img">
-                        <div class="overlay">                    
-                            <div class="items"></div>
-                            <div class="div1 items head">
-                                <p>Yushikan Kendo</p>
-                                <hr>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="container">
-                    <a href="#">
-                        <img src="{{asset('uploads/elecasset-logo.png')}}" class="projet-img">
-                        <div class="overlay">                    
-                            <div class="items"></div>
-                            <div class="div1 items head">
-                                <p>Elec Manda</p>
-                                <hr>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            {% endfor %}
             </div>
         </article>
     </section>
