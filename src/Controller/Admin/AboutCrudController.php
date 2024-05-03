@@ -25,7 +25,8 @@ class AboutCrudController extends AbstractCrudController
             TextField::new('name')->setFormType(VichImageType::class)
                                   ->onlyOnForms(),
             ImageField::new('name')->setBasePath('/uploads/about')
-                                   ->setUploadDir('/public/uploads/about')
+                                   ->setUploadDir('/public/uploads/about'),
+            TextField::new('alt_picture')
         ];
         
     }

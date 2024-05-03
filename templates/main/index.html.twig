@@ -96,7 +96,7 @@
                 </div>
             </article>
             <article class="m-[5%] clip-zone md:w-[50%]">
-                <img src="{{ about_images ~ about.name }}" alt="Selfie de Lisa Muller" class="clipped">
+                <img src="{{ about_images ~ about.name }}" alt="{{ about.altPicture }}" class="clipped">
             </article>
         </div>
     </section>
@@ -111,7 +111,7 @@
             <div class="flex flex-col md:flex-row">
             {% for prestation in prestations %}
                 <article class="prestation-class overflow-hidden">
-                    <img src="{{ prestations_images ~ prestation.name }}">
+                    <img src="{{ prestations_images ~ prestation.name }}" alt="{{ prestation.altPicture }}">
                     <div class="w-full my-[2%] text-justify">
                         <h5 class="text-xl my-[2%]">{{ prestation.titre }}</h5>
                         <p>
@@ -137,8 +137,8 @@
             <div class="parent">
             {% for projet in projets %}
                 <div class="container">
-                    <a href="{{ projet.lien }}">
-                        <img src="{{ projet_images ~ projet.name }}" class="projet-img">
+                    <a href="{{ projet.lien }}" alt="{{ projet.altLien }}" target="_blank">
+                        <img src="{{ projet_images ~ projet.name }}" alt="{{ projet.altPicture }}" class="projet-img">
                         <div class="overlay">                    
                             <div class="items"></div>
                             <div class="div1 items head">

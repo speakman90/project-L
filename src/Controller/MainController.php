@@ -52,12 +52,6 @@ class MainController extends AbstractController
                 'Votre message à bien était envoyé'
             );
         }
-        else {
-            $this->addFlash(
-                'error',
-                "Votre message n'à pas pu être envoyé"
-            );
-        }
 
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
