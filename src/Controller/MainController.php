@@ -61,7 +61,7 @@ class MainController extends AbstractController
 
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
-            'about' => $aboutRepository->findAll(),
+            'about' => $aboutRepository->findBy([], ['id' => 'ASC'], 1)[0],
             'prestations' => $prestationsRepository->findBy([], ['id' => 'ASC'], 3),
             'projets' => $projetsRepository->findBy([], ['id' => 'ASC'], 6),
         ]);

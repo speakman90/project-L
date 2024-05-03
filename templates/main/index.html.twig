@@ -91,12 +91,12 @@
                 </div>
                 <div>
                     <p class="text-justify whitespace-pre-line">
-                        {{about[0].description|striptags }}
+                        {{about.description|striptags }}
                     </p>
                 </div>
             </article>
             <article class="m-[5%] clip-zone md:w-[50%]">
-                <img src="{{ about_images ~ about[0].name }}" alt="Selfie de Lisa Muller" class="clipped">
+                <img src="{{ about_images ~ about.name }}" alt="Selfie de Lisa Muller" class="clipped">
             </article>
         </div>
     </section>
