@@ -4,19 +4,21 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use Symfony\Component\Mime\Email;
+use App\Repository\AboutRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
     public function index(
         Request $request,
+        AboutRepository $aboutRepository,
         EntityManagerInterface $manager,
         MailerInterface $mailer
         ): Response
@@ -55,6 +57,7 @@ class MainController extends AbstractController
 
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
+            'about' => $aboutRepository->findAll(),
         ]);
     }
 

@@ -91,12 +91,12 @@
                 </div>
                 <div>
                     <p class="text-justify whitespace-pre-line">
-                        Graphiste passionnée par l’art graphique et l’automobile, je me lance en Free-lance forte de 3 années d’expérience dans l’industrie. Mon objectif est de créer des designs uniques captivants et inspirants ! Je suis prête à collaborer sur tous vos projets web et print.
+                        {{about[0].description}}
                     </p>
                 </div>
             </article>
             <article class="m-[5%] clip-zone md:w-[50%]">
-                <img src="{{ asset('uploads/photo2moi.png') }}" alt="Selfie de Lisa Muller" class="clipped">
+                <img src="{{ about_images ~ about[0].name }}" alt="Selfie de Lisa Muller" class="clipped">
             </article>
         </div>
     </section>
