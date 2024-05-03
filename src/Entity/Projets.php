@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ProjetsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ProjetsRepository::class)]
+#[Vich\Uploadable]
 class Projets
 {
     #[ORM\Id]
@@ -16,11 +19,14 @@ class Projets
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lien = null;
 
-    #[ORM\ManyToOne(inversedBy: 'Projets')]
-    private ?Images $picture = null;
+    #[Vich\UploadableField(mapping: 'projet_picture', fileNameProperty: 'name')]
+    private ?File $picture = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
 
     public function getId(): ?int
     {
@@ -44,22 +50,35 @@ class Projets
         return $this->lien;
     }
 
-    public function setLien(string $lien): static
+    public function setLien(?string $lien): static
     {
         $this->lien = $lien;
 
         return $this;
     }
 
-    public function getPicture(): ?Images
+    public function getPicture(): ?File
     {
         return $this->picture;
     }
 
-    public function setPicture(?Images $picture): static
+    public function setPicture(?File $picture): static
     {
         $this->picture = $picture;
 
         return $this;
     }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+    
 }

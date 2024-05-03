@@ -6,6 +6,7 @@
 parameters:
     about_images: /uploads/about
     prestations_images: /uploads/prestations
+    projet_images: /uploads/projets
 services:
     # default configuration for services in *this* file
     _defaults:

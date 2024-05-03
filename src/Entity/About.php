@@ -2,11 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\AboutRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AboutRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AboutRepository::class)]
+#[Vich\Uploadable]
 class About
 {
     #[ORM\Id]
@@ -17,8 +20,11 @@ class About
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\ManyToOne(inversedBy: 'abouts')]
-    private ?Images $picture = null;
+    #[Vich\UploadableField(mapping: 'about_picture', fileNameProperty: 'name')]
+    private ?File $picture = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
 
     public function getId(): ?int
     {
@@ -37,16 +43,28 @@ class About
         return $this;
     }
 
-    public function getPicture(): ?Images
+    public function getPicture(): ?File
     {
         return $this->picture;
     }
 
-    public function setPicture(?Images $picture): self
+    public function setPicture(?File $picture): static
     {
-
         $this->picture = $picture;
 
         return $this;
     }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
 }
