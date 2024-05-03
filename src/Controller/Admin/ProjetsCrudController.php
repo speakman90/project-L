@@ -22,8 +22,8 @@ class ProjetsCrudController extends AbstractCrudController
             TextField::new('lien'),
             TextField::new('name')->setFormType(VichImageType::class)
                                   ->onlyOnForms(),
-            ImageField::new('name')->setBasePath('/uploads/prestations')
-                                   ->setUploadDir('public/uploads/prestations')
+            ImageField::new('name')->setBasePath('/uploads/projets')
+                                   ->setUploadDir('public/uploads/projets')
         ];
     }
 }
