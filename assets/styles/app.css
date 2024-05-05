@@ -31,7 +31,7 @@ background: #555;
 }
 
 .marquee-rtl {
-    max-width: 100%;                      /* largeur de la fenêtre */
+    max-width: 100%;
     overflow: hidden;         
 }
 
@@ -52,7 +52,7 @@ background: #555;
 }
 
 .clip-zone {
-    width: 647px;
+    width: 650px;
     height: 400px;
     overflow: hidden;
     -webkit-box-shadow: -10px 20px 0px 9px #FFFFFF; 
@@ -221,5 +221,48 @@ background: #555;
     .container {
         width: 3000px;
         white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: 320px) {
+
+    .view-phone-text {
+        margin-top: 25%;
+        margin-bottom: 45%;
+    }
+
+    .view-phone-logo{
+        height: 23rem;
+        right: 0;
+        top: -15rem;
+    }
+
+    .view-phone-form {
+        margin: 10%;
+    }
+}
+
+@media screen and (min-width: 425px) {
+
+    .view-phone-text {
+        margin-top: 25%;
+        margin-bottom: 45%;
+    }
+
+    .view-phone-logo{
+        height: 23rem;
+        right: 0;
+        top: -20rem;
+    }
+
+    .view-phone-form {
+        margin: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .clip-zone {
+        width: inherit;
+        height: 250px;
     }
 }
